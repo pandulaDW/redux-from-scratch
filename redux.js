@@ -14,8 +14,12 @@ exports.createStore = (reducer) => {
   };
 
   store.dispatch = (action) => {
-    // Object.entries(reducer.reducerObj)
-    store.state = reducer(store.state, action);
+    let reducerState = {};
+    Object.entries(reducer.reducerObj).forEach(([reducerKey, reducerFunc]) => {
+      reducerState[reducerKey] = reducerFunc(store.state[reducerKey], action);
+    });
+
+    store.state = reducerState;
     store.listeners.forEach((listener) => listener());
   };
 

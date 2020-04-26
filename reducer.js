@@ -6,10 +6,10 @@ const countReducer = (prevState, action) => {
 
   switch (action.type) {
     case countConstants.INCREMENT_COUNT:
-      return { count: state + 1 };
+      return state + 1;
 
     case countConstants.DECREMENT_COUNT:
-      return { count: state - 1 };
+      return state - 1;
 
     default:
       return state;
