@@ -19,7 +19,7 @@ const removeTodoLogic = (todo) => {
   store.dispatch(countActions.decrementCount());
 };
 
-// Dispatch an action
+// Firing the business actions (will be equivalent to pushing a button)
 addTodoLogic('brush teeth');
 addTodoLogic('wash face');
 removeTodoLogic('brush teeth');
