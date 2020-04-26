@@ -1,6 +1,22 @@
-const constants = './constants';
+const { countConstants, todoConstants } = require('./constants');
 
 // Action creators
-exports.toDoAction = (todo) => {
-  return { type: 'ADD_TODO', payload: todo };
+exports.countActions = {
+  incrementCount: () => {
+    return { type: countConstants.INCREMENT_COUNT };
+  },
+
+  decrementCount: () => {
+    return { type: countConstants.DECREMENT_COUNT };
+  },
+};
+
+exports.toDoActions = {
+  addTodo: (todo) => {
+    return { type: todoConstants.ADD_TODO, payload: todo };
+  },
+
+  removeTodo: (todo) => {
+    return { type: todoConstants.REMOVE_TODO, payload: todo };
+  },
 };

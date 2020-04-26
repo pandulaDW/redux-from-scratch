@@ -1,20 +1,17 @@
-const { createStore } = require('./redux');
-const reducer = require('./reducer');
-const { toDoAction } = require('./actions');
+const { createStore, combineReducers } = require('./redux');
+const rootReducer = require('./reducer');
+const { countActions, toDoActions } = require('./actions');
 
 // Creating the store
-const store = createStore(reducer, []);
+const store = createStore(rootReducer);
 
 // Subscribe a listener to the store
 store.subscribe(() => console.log(store.getState()));
 
 // Dispatch an action
-store.dispatch(toDoAction('Read redux 1'));
-store.dispatch(toDoAction('Read redux 2'));
-store.dispatch(toDoAction('Read redux 2'));
+// store.dispatch(toDoActions.addTodo('brush teeth'));
+// store.dispatch(toDoActions.addTodo('wash face'));
+// store.dispatch(toDoActions.removeTodo('brush teeth'));
 
 // Unsubscribing a listener
 store.unsubscribe();
-
-// Dispatching an action
-store.dispatch(toDoAction('Read redux 3'));
