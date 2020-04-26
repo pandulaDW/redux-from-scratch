@@ -5,4 +5,6 @@ Builiding a minimal clone of the redux library from scratch for Node JS
 - createStore
 - combineReducers
 
-# Simple Counter App is implemented to test the functionality
+### A simple ToDo App was implemented to test the functionality
+ - Includes two toDo actions and two counter actions
+ - Includes two reducers, combined with combined reducer
